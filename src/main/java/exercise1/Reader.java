@@ -4,19 +4,15 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Reader {
+ class Reader {
 
-    Reader(){
-
-    }
-
-    public String reading(){
+     String reading(){
         String words = "";
         try(BufferedReader br = new BufferedReader(new FileReader("file.txt")))
         {
-            String result = "";
+            String result;
             while ((result = br.readLine())!= null){
-                words += result;
+                words += " " + result ;
             }
         }
         catch(IOException ex){

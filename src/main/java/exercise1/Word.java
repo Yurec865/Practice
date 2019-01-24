@@ -2,19 +2,16 @@ package exercise1;
 
 import java.util.HashMap;
 
-public class Word {
+ class Word {
 
     private String word;
 
-    public Word(String word) {
-        this.word = word;
+    Word(String result) {
+        this.word = result;
     }
 
-    public Word() {
 
-    }
-
-    public String count() {
+     String count() {
         String[] words = word.split("\\s+");
         HashMap<String, Integer> wordToCount = new HashMap<>();
         for (String word : words) {
@@ -26,6 +23,6 @@ public class Word {
         for (String word : wordToCount.keySet()) {
             System.out.println(word + " " + wordToCount.get(word));
         }
-        return word;
+        return String.valueOf(wordToCount);
     }
 }

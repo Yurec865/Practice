@@ -8,23 +8,23 @@ public class Main {
 
         Reader reader = new Reader();
         String result = reader.reading();
-        PopularWord popularWord = new PopularWord();
-        NumberCharacters numberCharacters = new NumberCharacters();
 
         System.out.print("Enter command : ");
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
 
         switch (input) {
-            case "1":
+            case "word":
                 Word word = new Word(result);
                 System.out.println(word.count());
                 break;
-            case "words_count -popular":
-                System.out.println(popularWord);
+            case "popular_word":
+                PopularWord popularWord = new PopularWord(result);
+                System.out.println(popularWord.search());
                 break;
             case "chars_count":
-                System.out.println(numberCharacters);
+                NumberCharacters numberCharacters = new NumberCharacters(result);
+                System.out.println(numberCharacters.countNumbers());
                 break;
             default:
                 throw new RuntimeException("Wrong command!!!");
