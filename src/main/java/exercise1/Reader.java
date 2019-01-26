@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 
  class Reader {
-
      String reading(){
         String words = "";
         try(BufferedReader br = new BufferedReader(new FileReader("file.txt")))
@@ -18,6 +17,6 @@ import java.io.IOException;
         catch(IOException ex){
             System.out.println(ex.getMessage());
         }
-        return words;
+        return words.trim();
     }
 }
