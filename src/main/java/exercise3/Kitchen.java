@@ -8,7 +8,7 @@ public class Kitchen extends Room {
     }
     @Override
     double square() {
-        return length * width;
+        return customSquare();
     }
     @Override
     double perimeter() {
@@ -16,10 +16,11 @@ public class Kitchen extends Room {
     }
     private double customSquare(){
         double result = 0;
+        double square = length * width;
         if (balcony == null){
-            result = square();
+            result = square;
         }else if (balcony != null){
-            result = square() + balcony.square();
+            result = balcony.square() + square;
         }
         return result;
     }

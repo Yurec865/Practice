@@ -14,6 +14,4 @@ public abstract class Room {
     double perimeter(){
         return length + width;
     }
-
-
 }
