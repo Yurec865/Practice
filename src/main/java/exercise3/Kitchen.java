@@ -15,12 +15,12 @@ public class Kitchen extends Room {
         return length + width;
     }
     private double customSquare(){
+        double result = 0;
         if (balcony == null){
-            square();
+            result = square();
         }else if (balcony != null){
-            square();
-            balcony.square();
+            result = square() + balcony.square();
         }
-        return square() + balcony.square();
+        return result;
     }
 }
