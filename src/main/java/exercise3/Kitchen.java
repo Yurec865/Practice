@@ -1,10 +1,7 @@
 package exercise3;
 
 public class Kitchen extends Room {
-    Balcony balcony = new Balcony(4,5);
-    public Kitchen(double length, double width) {
-        super(length, width);
-    }
+    private Balcony balcony;
     public Kitchen(double length, double width, Balcony balcony) {
         super(length, width);
         this.balcony = balcony;
@@ -13,7 +10,6 @@ public class Kitchen extends Room {
     double square() {
         return length * width;
     }
-
     @Override
     double perimeter() {
         return length + width;
@@ -25,6 +21,6 @@ public class Kitchen extends Room {
             square();
             balcony.square();
         }
-        return 0;
+        return square() + balcony.square();
     }
 }
