@@ -5,17 +5,25 @@ import java.io.FileReader;
 import java.io.IOException;
 
  class Reader {
-     String reading(){
+     String reading () throws IOException{
         String words = "";
-        try(BufferedReader br = new BufferedReader(new FileReader("file.txt")))
+        BufferedReader br = null;
+        try
         {
+            br = new BufferedReader(new FileReader("file.txt"));
             String result;
             while ((result = br.readLine())!= null){
                 words += " " + result ;
             }
+            br.close();
         }
         catch(IOException ex){
-            System.out.println(ex.getMessage());
+            throw new RuntimeException(ex.getMessage());
+        }
+        finally {
+            if (br != null){
+                br.close();
+            }
         }
         return words.trim();
     }
