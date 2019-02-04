@@ -5,11 +5,15 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Reader reader = new Reader();
-        String result = reader.reading();
-        try {
+        String result = "";
+        try{
+            result = reader.reading();
+        }catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
             System.out.print("Enter command : ");
             Scanner scan = new Scanner(System.in);
             String input = scan.nextLine();
@@ -27,12 +31,8 @@ public class Main {
                     NumberCharacters numberCharacters = new NumberCharacters(result);
                     System.out.println(numberCharacters.countNumbers());
                     break;
-                default:
-                    throw new RuntimeException("Wrong command!!!");
             }
-        }catch (RuntimeException ex){
-            System.out.println(ex.getMessage());
-        }
     }
 }
+
 
