@@ -29,8 +29,6 @@ public class Main {
         elementL.add(500000,"element");
         return "Add to LinkedList: " + (System.currentTimeMillis() - startTime) + "ms";
     }
-    //Почему показывает что ArrayList работает быстрее не пойму, так как при вставке елемента в центр надо сдвигать все елементы после него.
-    //В LinkedList достаточно поменять ссылки соседних елементов.
     static String removeA(){
         elementA.remove(500000);
         return "Remove from ArrayList: " + (System.currentTimeMillis() - startTime) + "ms";
@@ -39,8 +37,6 @@ public class Main {
         elementL.remove(500000);
         return "Remove from LinkedList: " + (System.currentTimeMillis() - startTime) + "ms";
     }
-    //Remove так же не пойму почему показывает наоборот, так как в ArrayList после удаление все елементы после удаленного сдвигаются.
-    //В LinkedList просто меняются ссылки соседей.
     static String getA(){
         elementA.get(500000);
         return "Get from ArrayList: " + (System.currentTimeMillis() - startTime) + "ms";
@@ -49,6 +45,6 @@ public class Main {
         elementL.get(500000);
         return "Get from LinkedList: " + (System.currentTimeMillis() - startTime) + "ms";
     }
-    //гет в ArrayList работает быстрее потому, что для того чтобы взять елемент у ArrayList мы просто обращаемся к соответсвующему елементу.
+    //В ArrayList работает быстрее потому, что для того чтобы взять елемент у ArrayList мы просто обращаемся к соответсвующему елементу.
     //а в LinkedList нужно пройтись последовательно по всем обьектам.
 }
